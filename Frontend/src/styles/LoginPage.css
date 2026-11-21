@@ -1,0 +1,338 @@
+/* ==========================================================================
+   USER & DONOR AUTHENTICATION STYLING - CRIMSON / WHITE / BLACK
+   ========================================================================== */
+
+.eb-auth-page-root {
+    padding: 20px 16px 80px;
+    min-height: calc(100vh - 200px);
+    background: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.eb-auth-card-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.eb-auth-avatar-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #e11d48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+}
+
+.eb-auth-card-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.4px;
+    margin-bottom: 6px;
+}
+
+.eb-auth-card-sub {
+    font-size: 13px;
+    color: #64748b;
+    max-width: 380px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    line-height: 1.5;
+}
+
+/* Tab Switcher */
+.eb-auth-tab-switch {
+    display: flex;
+    background: #e2e8f0;
+    padding: 4px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+.auth-tab-btn {
+    flex: 1;
+    padding: 9px 0;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: #475569;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.auth-tab-btn.active {
+    background: #ffffff;
+    color: #e11d48;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Body */
+.eb-auth-form-box {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    padding: 24px 22px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    box-sizing: border-box;
+}
+
+.eb-input-unit {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.eb-input-unit label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e293b;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Icon input container */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-with-icon > svg:first-of-type {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.input-with-icon input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 0 40px;
+    border-radius: 12px;
+    border: 1.5px solid #cbd5e1;
+    font-size: 14px;
+    background: #ffffff;
+    color: #0f172a;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.15s ease;
+}
+
+.input-with-icon input:focus {
+    border-color: #e11d48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
+}
+
+/* Specialized Password Container */
+.pass-field-wrapper input {
+    padding-right: 46px !important;
+}
+
+/* Toggle Password Visibility Eye Button */
+.eb-toggle-pass-inline {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent !important;
+    border: none !important;
+    color: #94a3b8 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 8px;
+    z-index: 10 !important;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+.eb-toggle-pass-inline:hover {
+    color: #e11d48 !important;
+    background: #fff1f2 !important;
+}
+
+.eb-toggle-pass-inline svg {
+    display: block;
+    pointer-events: none;
+}
+
+/* OTP Split Input */
+.input-action-split {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.input-action-split .flex-1 {
+    flex: 1;
+}
+
+.eb-btn-send-otp {
+    padding: 0 16px;
+    height: 44px;
+    background: #ffe4e6;
+    border: 1.5px solid #fecdd3;
+    color: #e11d48;
+    font-size: 12.5px;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+}
+
+.eb-btn-send-otp:hover:not(:disabled) {
+    background: #e11d48;
+    color: #ffffff;
+    border-color: #e11d48;
+}
+
+.eb-btn-send-otp:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Submit Action Button */
+.eb-auth-action-btn {
+    width: 100%;
+    height: 46px;
+    border-radius: 12px;
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.28);
+    transition: all 0.15s ease;
+}
+
+.eb-auth-action-btn:hover:not(:disabled) {
+    background: #be123c;
+    transform: translateY(-1px);
+}
+
+.eb-auth-action-btn.btn-blocked {
+    background: #94a3b8 !important;
+    cursor: not-allowed;
+    box-shadow: none !important;
+}
+
+/* Forgot Password Link */
+.eb-forgot-pass-link {
+    background: none;
+    border: none;
+    color: #e11d48;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.eb-forgot-pass-link:hover {
+    color: #be123c;
+}
+
+/* ==========================================================================
+   RATE LIMIT & CONSECUTIVE FAILED LOGIN WARNING BANNERS
+   ========================================================================== */
+
+.eb-login-alert-banner {
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+    animation: fadeInSlide 0.2s ease-out;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-banner-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.alert-banner-left strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 3px;
+    line-height: 1.2;
+}
+
+.alert-banner-left p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+/* 1. Generic Error Banner (Attempts 1-2) */
+.eb-login-alert-banner.error {
+    background: #fff1f2;
+    border: 1.5px solid #fecdd3;
+    color: #be123c;
+}
+
+/* 2. Warning Banner (Attempt 3: 2 attempts left warning) */
+.eb-login-alert-banner.warning {
+    background: #fffbeb;
+    border: 1.5px solid #fde68a;
+    color: #92400e;
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.12);
+}
+
+.banner-icon-warning {
+    color: #d97706;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* 3. Lockout Banner (Attempt 5: IP Blocked) */
+.eb-login-alert-banner.blocked {
+    background: #fee2e2;
+    border: 1.5px solid #f87171;
+    color: #991b1b;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.15);
+}
+
+.banner-icon-blocked {
+    color: #dc2626;
+    flex-shrink: 0;
+    margin-top: 1px;
+}

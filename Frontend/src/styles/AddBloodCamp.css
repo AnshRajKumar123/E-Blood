@@ -1,0 +1,225 @@
+/* ==========================================================================
+   ADD BLOOD CAMP PAGE STYLING (ISOLATED)
+   ========================================================================== */
+
+.eb-camp-form-root {
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    padding: 36px 16px 100px;
+    background: #ffffff;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    overflow-y: visible;
+}
+
+.eb-camp-header-wrap {
+    max-width: 720px;
+    margin: 0 auto 20px;
+}
+
+.eb-camp-form-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--eb-crimson, #e11d48);
+    letter-spacing: -0.5px;
+    margin: 8px 0 4px;
+}
+
+.eb-camp-form-container {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.eb-camp-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 14px;
+}
+
+.eb-camp-card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.eb-camp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.eb-camp-field label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.eb-camp-field input {
+    padding: 10px 12px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 13.5px;
+    color: #0f172a;
+    background: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease;
+}
+
+.eb-camp-field input:focus {
+    border-color: var(--eb-crimson, #e11d48);
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
+}
+
+.eb-camp-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Photo Upload Box & Previews (Max 4 images) */
+.eb-camp-upload-box {
+    border: 1.5px dashed #cbd5e1;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.eb-camp-upload-box:hover {
+    border-color: var(--eb-crimson, #e11d48);
+    background: #fff1f2;
+}
+
+.eb-camp-upload-box span {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.eb-camp-upload-box small {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.eb-camp-img-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.eb-camp-preview-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 90px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+    background: #f1f5f9;
+}
+
+.eb-camp-preview-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.eb-camp-remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.75);
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.eb-camp-remove-btn:hover {
+    background: #e11d48;
+    transform: scale(1.1);
+}
+
+.eb-camp-badge {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    background: rgba(15, 23, 42, 0.65);
+    color: #ffffff;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.eb-camp-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.eb-btn-submit-camp {
+    flex: 1;
+    padding: 12px;
+    background: var(--eb-crimson, #e11d48);
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+    transition: background 0.15s ease;
+}
+
+.eb-btn-submit-camp:hover {
+    background: var(--eb-crimson-hover, #be123c);
+}
+
+.eb-btn-cancel-camp {
+    padding: 12px 20px;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    color: #475569;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .eb-camp-card {
+        padding: 16px;
+    }
+    .eb-camp-duo {
+        grid-template-columns: 1fr;
+    }
+    .eb-camp-img-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

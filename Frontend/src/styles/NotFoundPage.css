@@ -1,0 +1,417 @@
+/* ==========================================================================
+   404 NOT FOUND PAGE (MODERN MEDICAL THEME)
+   ========================================================================== */
+
+.eb-404-canvas {
+    padding: 44px 16px 80px;
+    background: radial-gradient(circle at 50% 20%, #fff1f2 0%, #ffffff 58%);
+    min-height: calc(100vh - 220px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.eb-404-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* Status Pill */
+.eb-404-tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #fecdd3;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--eb-crimson, #e11d48);
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.08);
+    margin-bottom: 12px;
+}
+
+.eb-tag-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #e11d48;
+    animation: pulseDotGlow 1.8s infinite;
+}
+
+@keyframes pulseDotGlow {
+    0%, 100% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+        box-shadow: 0 0 8px rgba(225, 29, 72, 0.8);
+    }
+}
+
+/* ==========================================================================
+   HERO 404 DISPLAY & ECG MONITOR LINE
+   ========================================================================== */
+.eb-hero-ecg-stage {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 0 8px;
+}
+
+.eb-ecg-svg-wrap {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.eb-ecg-line {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: rgba(244, 63, 94, 0.28);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawHeartbeat 3.2s ease-in-out infinite;
+}
+
+@keyframes drawHeartbeat {
+    0% {
+        stroke-dashoffset: 600;
+        opacity: 0.3;
+    }
+    50% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: -600;
+        opacity: 0.3;
+    }
+}
+
+.eb-glitch-digit-deck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.eb-digit {
+    font-size: 110px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -6px;
+    color: #0f172a;
+    background: linear-gradient(180deg, #0f172a 35%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+}
+
+/* Center Droplet Beacon */
+.eb-droplet-beacon {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+}
+
+.eb-beacon-pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(225, 29, 72, 0.25) 0%, rgba(225, 29, 72, 0) 72%);
+    animation: beaconPulse 2.4s ease-in-out infinite;
+}
+
+.eb-beacon-droplet {
+    width: 116px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1.5px solid #fecdd3;
+    box-shadow: 0 12px 28px rgba(225, 29, 72, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    animation: bounceDroplet 2.4s ease-in-out infinite;
+}
+
+@keyframes beaconPulse {
+    0%, 100% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.35);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceDroplet {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ==========================================================================
+   HEADINGS & CONTENT
+   ========================================================================== */
+.eb-404-headline {
+    font-size: 30px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.6px;
+    margin: 8px 0 8px;
+}
+
+.eb-404-description {
+    font-size: 14.5px;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 0 24px;
+}
+
+/* ==========================================================================
+   BUTTON DECK (PILL SHAPED, VISIBLE & BALANCED)
+   ========================================================================== */
+.eb-404-primary-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.eb-btn-404 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 24px;
+    border-radius: 9999px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+}
+
+.eb-btn-crimson {
+    background: var(--eb-crimson, #e11d48);
+    border: 1px solid var(--eb-crimson, #e11d48);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+}
+
+.eb-btn-crimson:hover {
+    background: #be123c;
+    border-color: #be123c;
+    transform: translateY(-1.5px);
+    box-shadow: 0 8px 20px rgba(225, 29, 72, 0.32);
+}
+
+.eb-btn-glass {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    color: #334155;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.eb-btn-glass:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #0f172a;
+    transform: translateY(-1.5px);
+}
+
+/* ==========================================================================
+   IN-PAGE EMERGENCY QUICK SEARCH DOCK
+   ========================================================================== */
+.eb-404-quick-search-dock {
+    width: 100%;
+    max-width: 520px;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 6px 6px 6px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+    box-sizing: border-box;
+    margin-bottom: 28px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eb-404-quick-search-dock:focus-within {
+    border-color: var(--eb-crimson, #e11d48);
+    box-shadow: 0 8px 24px rgba(225, 29, 72, 0.12);
+}
+
+.eb-search-dock-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.eb-dock-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13.5px;
+    color: #0f172a;
+}
+
+.eb-dock-search-input::placeholder {
+    color: #94a3b8;
+}
+
+.eb-dock-search-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: var(--eb-crimson, #e11d48);
+    color: #ffffff;
+    border: none;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s ease;
+}
+
+.eb-dock-search-submit:hover {
+    background: #be123c;
+}
+
+/* ==========================================================================
+   SHORTCUTS MATRIX
+   ========================================================================== */
+.eb-404-shortcuts-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    width: 100%;
+}
+
+.eb-matrix-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+}
+
+.eb-matrix-item:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.eb-matrix-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.eb-matrix-item h4 {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 3px;
+}
+
+.eb-matrix-item p {
+    font-size: 11.5px;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .eb-404-shortcuts-matrix {
+        grid-template-columns: 1fr;
+    }
+
+    .eb-digit {
+        font-size: 85px;
+    }
+
+    .eb-404-primary-actions {
+        flex-direction: column;
+    }
+
+    .eb-btn-404 {
+        width: 100%;
+    }
+
+    .eb-404-quick-search-dock {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+    }
+
+    .eb-dock-search-submit {
+        width: 100%;
+        justify-content: center;
+    }
+}

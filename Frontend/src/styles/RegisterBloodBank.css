@@ -1,0 +1,322 @@
+/* ==========================================================================
+   REGISTER BLOOD BANK PAGE STYLING (ISOLATED)
+   ========================================================================== */
+
+.eb-reg-bank-root {
+    padding: 24px 0 80px;
+    background: #ffffff;
+    min-height: calc(100vh - 280px);
+}
+
+.eb-reg-bank-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--eb-crimson, #e11d48);
+    letter-spacing: -0.5px;
+    margin: 4px 0 18px;
+}
+
+.eb-reg-bank-container {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.eb-reg-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.eb-reg-card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.eb-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.eb-form-field label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.eb-form-field input {
+    padding: 10px 12px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 13.5px;
+    color: #0f172a;
+    background: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease;
+}
+
+.eb-form-field input:focus {
+    border-color: var(--eb-crimson, #e11d48);
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
+}
+
+.eb-duo-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* ==========================================================================
+   STOCK INVENTORY GRID (8 BLOOD GROUPS)
+   ========================================================================== */
+.eb-stock-total-badge {
+    font-size: 12px;
+    font-weight: 800;
+    color: #e11d48;
+    background: #ffe4e6;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    letter-spacing: 0.3px;
+}
+
+.eb-stock-inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.eb-stock-field-box {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.eb-stock-field-box:focus-within {
+    border-color: var(--eb-crimson, #e11d48);
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
+}
+
+.eb-stock-group-label {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--eb-crimson, #e11d48);
+}
+
+.eb-stock-qty-input {
+    width: 100% !important;
+    text-align: center;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    padding: 6px 4px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    background: #f8fafc !important;
+}
+
+.eb-stock-qty-input:focus {
+    background: #ffffff !important;
+    border-color: var(--eb-crimson, #e11d48) !important;
+}
+
+/* ==========================================================================
+   IMAGE UPLOAD & PREVIEW GRID (MAX 4 IMAGES)
+   ========================================================================== */
+.eb-upload-interactive-box {
+    border: 1.5px dashed #cbd5e1;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.eb-upload-interactive-box:hover {
+    border-color: var(--eb-crimson, #e11d48);
+    background: #fff1f2;
+}
+
+.eb-upload-interactive-box span {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.eb-upload-interactive-box small {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.eb-image-previews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.eb-preview-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 90px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+    background: #f1f5f9;
+}
+
+.eb-preview-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.eb-remove-img-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.75);
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.eb-remove-img-btn:hover {
+    background: #e11d48;
+    transform: scale(1.1);
+}
+
+.eb-preview-badge {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    background: rgba(15, 23, 42, 0.65);
+    color: #ffffff;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   TAG SELECTORS & SUBMIT ACTIONS
+   ========================================================================== */
+.eb-tag-selector-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.eb-tag-selector-group small {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.eb-tag-choice-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.eb-choice-tag {
+    padding: 6px 12px;
+    border-radius: 9999px;
+    border: 1.5px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-choice-tag.selected {
+    background: var(--eb-crimson, #e11d48);
+    border-color: var(--eb-crimson, #e11d48);
+    color: #ffffff;
+}
+
+.eb-reg-bank-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.eb-btn-submit-review {
+    flex: 1;
+    padding: 12px;
+    background: var(--eb-crimson, #e11d48);
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+    transition: background 0.15s ease;
+}
+
+.eb-btn-submit-review:hover {
+    background: var(--eb-crimson-hover, #be123c);
+}
+
+.eb-btn-cancel-reg {
+    padding: 12px 20px;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    color: #475569;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .eb-reg-card {
+        padding: 16px;
+    }
+
+    .eb-duo-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .eb-stock-inputs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .eb-image-previews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,402 @@
+/* ==========================================================================
+   MANAGEMENT TABLES & CUSTOM DROPDOWN - WHITE / CRIMSON / BLACK
+   ========================================================================== */
+
+.eb-table-pane-root {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Donor Summary Banner */
+.eb-donor-summary-banner {
+    background: #ffffff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 20px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.summary-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.summary-icon-pill {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    color: #e11d48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.summary-left h2 {
+    margin: 0 0 2px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #0a0a0a;
+    letter-spacing: -0.4px;
+}
+
+.summary-left p {
+    margin: 0;
+    font-size: 13px;
+    color: #71717a;
+}
+
+.summary-badges-stack {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.donor-count-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: #fafafa;
+    border: 1.5px solid #e4e4e7;
+    border-radius: 12px;
+    padding: 6px 14px;
+}
+
+.donor-count-chip small {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #71717a;
+    letter-spacing: 0.5px;
+}
+
+.donor-count-chip strong {
+    font-size: 19px;
+    font-weight: 900;
+    color: #0a0a0a;
+    line-height: 1.1;
+}
+
+.donor-count-chip.total strong {
+    color: #e11d48;
+}
+
+/* Filter Strip */
+.eb-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.eb-filter-search {
+    flex: 1;
+    min-width: 260px;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #e4e4e7;
+    border-radius: 12px;
+    padding: 0 14px;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.eb-filter-search input {
+    background: transparent;
+    border: none;
+    color: #0a0a0a;
+    font-size: 13.5px;
+    outline: none;
+    width: 100%;
+    padding: 12px 0;
+}
+
+.eb-filter-refresh {
+    background: #ffffff;
+    border: 1.5px solid #e4e4e7;
+    color: #64748b;
+    border-radius: 12px;
+    padding: 0 16px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-filter-refresh:hover {
+    color: #e11d48;
+    border-color: #fecdd3;
+    background: #fff1f2;
+}
+
+/* ==========================================================================
+   CUSTOM BLOOD GROUP SELECT DROPDOWN
+   ========================================================================== */
+.eb-custom-blood-dropdown {
+    position: relative;
+    width: 210px;
+}
+
+.eb-blood-select-trigger {
+    width: 100%;
+    height: 44px;
+    background: #ffffff;
+    border: 1.5px solid #e4e4e7;
+    border-radius: 12px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.eb-blood-select-trigger:hover {
+    border-color: #cbd5e1;
+}
+
+.eb-blood-select-trigger.open {
+    border-color: #e11d48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
+}
+
+.trigger-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0a0a0a;
+}
+
+.trigger-left .ico-active {
+    color: #e11d48;
+}
+
+.trigger-left .ico-muted {
+    color: #94a3b8;
+}
+
+.trigger-chevron {
+    color: #71717a;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+}
+
+.trigger-chevron.rotate {
+    transform: rotate(180deg);
+    color: #e11d48;
+}
+
+.eb-blood-menu-portal {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    width: 230px;
+    background: #ffffff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 14px;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+    z-index: 60;
+    padding: 6px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    animation: dropdownPop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownPop {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.eb-blood-option-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-blood-option-row:hover {
+    background: #fff1f2;
+}
+
+.eb-blood-option-row.selected {
+    background: #ffe4e6;
+}
+
+.opt-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.opt-blood-pill {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    color: #e11d48;
+    font-size: 10.5px;
+    font-weight: 900;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.opt-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #0a0a0a;
+}
+
+.opt-check {
+    color: #e11d48;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   DATA TABLE STYLING
+   ========================================================================== */
+.eb-table-card {
+    background: #ffffff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.eb-custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13.5px;
+}
+
+.eb-custom-table th {
+    background: #fafafa;
+    color: #71717a;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 14px 18px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.eb-custom-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f8fafc;
+    color: #27272a;
+}
+
+.profile-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-disc {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff1f2;
+    color: #e11d48;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fecdd3;
+}
+
+.profile-cell strong {
+    color: #0a0a0a;
+    display: block;
+}
+
+.profile-cell small {
+    color: #71717a;
+}
+
+.blood-tag {
+    background: #ffe4e6;
+    border: 1px solid #fecdd3;
+    color: #e11d48;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-weight: 900;
+    font-size: 12px;
+}
+
+.units-tag {
+    background: #f4f4f5;
+    border: 1px solid #e4e4e7;
+    color: #0a0a0a;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 11.5px;
+}
+
+.flex-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-badge-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #dcfce7;
+    color: #15803d;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 800;
+}
+
+.btn-trash-action {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #fecdd3;
+    color: #e11d48;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.btn-trash-action:hover:not(:disabled) {
+    background: #e11d48;
+    color: #ffffff;
+    border-color: #e11d48;
+    transform: translateY(-1px);
+}

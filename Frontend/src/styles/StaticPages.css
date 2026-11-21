@@ -1,0 +1,740 @@
+/* ==========================================================================
+   ABOUT US ROOT & HERO STYLING
+   ========================================================================== */
+.eb-about-root {
+    background: #f8fafc;
+    min-height: calc(100vh - 220px);
+    padding: 24px 0 80px;
+}
+
+.eb-about-hero-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 10px auto 36px;
+}
+
+.eb-about-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--eb-crimson, #e11d48);
+    background: #ffe4e6;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+}
+
+.eb-about-hero-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.8px;
+    line-height: 1.25;
+    margin: 0 0 14px;
+}
+
+.eb-about-hero-sub {
+    font-size: 15.5px;
+    color: #64748b;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* 3-Cell Metrics Bar */
+.eb-about-metrics-bar {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    margin-bottom: 44px;
+}
+
+.eb-about-metric-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.metric-num {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--eb-crimson, #e11d48);
+    letter-spacing: -0.5px;
+    margin-bottom: 2px;
+}
+
+.metric-lbl {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.metric-divider {
+    width: 1px;
+    height: 48px;
+    background: #e2e8f0;
+}
+
+/* Story Grid */
+.eb-about-story-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 44px;
+    align-items: center;
+    margin-bottom: 44px;
+}
+
+.eb-story-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #0284c7;
+    background: #e0f2fe;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+}
+
+.eb-story-content-col h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+    margin: 0 0 14px;
+}
+
+.eb-story-content-col p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 0 14px;
+}
+
+.eb-story-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.eb-btn-story-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    border-radius: 9999px;
+    background: var(--eb-crimson, #e11d48);
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.eb-btn-story-primary:hover {
+    background: #be123c;
+    transform: translateY(-1px);
+}
+
+.eb-btn-story-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 9999px;
+    background: #ffffff;
+    color: #334155;
+    font-size: 13.5px;
+    font-weight: 700;
+    border: 1.5px solid #cbd5e1;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-btn-story-secondary:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+.eb-story-img-frame {
+    position: relative;
+    width: 100%;
+    height: 330px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+    border: 1px solid #e2e8f0;
+}
+
+.eb-story-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.eb-story-overlay-pill {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.eb-story-overlay-pill strong {
+    font-size: 13px;
+    color: #0f172a;
+    display: block;
+}
+
+.eb-story-overlay-pill small {
+    font-size: 11px;
+    color: #64748b;
+    display: block;
+}
+
+/* About Content Cards */
+.eb-about-sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 50px;
+}
+
+.eb-about-content-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+}
+
+.eb-section-title-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--eb-crimson, #e11d48);
+    background: #ffe4e6;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+}
+
+.eb-about-content-card h3 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 12px;
+}
+
+.eb-about-content-card p {
+    font-size: 14.5px;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Offers List */
+.eb-offers-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.eb-offer-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.offer-bullet-ico {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.eb-offer-item strong {
+    font-size: 14.5px;
+    color: #0f172a;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.eb-offer-item p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* 3-Pillar Cards */
+.eb-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 14px;
+}
+
+.eb-pillar-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 22px 18px;
+}
+
+.eb-pillar-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.eb-pillar-card h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 8px;
+}
+
+.eb-pillar-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Medical Disclaimer */
+.eb-medical-disclaimer-box {
+    background: #fff1f2;
+    border: 1.5px solid #fecdd3;
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.eb-medical-disclaimer-box .alert-ico {
+    color: #e11d48;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.eb-medical-disclaimer-box h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #9f1239;
+    margin: 0 0 6px;
+}
+
+.eb-medical-disclaimer-box p {
+    font-size: 13.5px;
+    color: #881337;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   TEAM SECTION
+   ========================================================================== */
+.eb-team-showcase-section {
+    padding: 30px 0 50px;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    background: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.eb-team-header-center {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 36px;
+}
+
+.eb-team-kicker-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--eb-crimson, #e11d48);
+    background: #ffe4e6;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+}
+
+.eb-team-headline {
+    font-size: 28px;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 10px;
+}
+
+.eb-team-subline {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.eb-team-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 24px;
+}
+
+.eb-member-card {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.eb-member-card:hover {
+    transform: translateY(-4px);
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.eb-member-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.eb-member-photo-frame {
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+}
+
+.eb-member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.eb-member-monogram {
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eb-member-role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #15803d;
+    background: #dcfce7;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.eb-member-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.eb-member-name {
+    font-size: 17px;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 2px;
+}
+
+.eb-member-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--eb-crimson, #e11d48);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.eb-member-bio {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 16px;
+    flex: 1;
+}
+
+.eb-member-skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.eb-skill-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    padding: 3px 7px;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   SUPPORT QUERY / QUESTION / ISSUE SUBMISSION DESK
+   ========================================================================== */
+.eb-support-query-section {
+    margin-bottom: 44px;
+}
+
+.eb-query-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+}
+
+.eb-query-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.eb-query-icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #ffe4e6;
+    color: #e11d48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.eb-query-header h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 4px;
+}
+
+.eb-query-header p {
+    font-size: 13.5px;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.eb-query-success-alert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    color: #15803d;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.eb-query-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.eb-query-row {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.eb-query-input-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.eb-query-input-col label {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.eb-query-input-col input,
+.eb-query-select,
+.eb-query-input-col textarea {
+    padding: 11px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #0f172a;
+    background: #ffffff;
+    outline: none;
+    transition: all 0.15s ease;
+    font-family: inherit;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.eb-query-input-col input:focus,
+.eb-query-select:focus,
+.eb-query-input-col textarea:focus {
+    border-color: #e11d48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
+}
+
+.eb-query-submit-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.eb-query-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: #64748b;
+}
+
+.eb-btn-send-query {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: var(--eb-crimson, #e11d48);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.28);
+    transition: all 0.15s ease;
+}
+
+.eb-btn-send-query:hover {
+    background: #be123c;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .eb-team-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .eb-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .eb-about-hero-title {
+        font-size: 26px;
+    }
+
+    .eb-about-metrics-bar {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .metric-divider {
+        display: none;
+    }
+
+    .eb-about-story-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .eb-story-img-frame {
+        height: 240px;
+    }
+
+    .eb-team-cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
+    .eb-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .eb-query-row {
+        flex-direction: column;
+    }
+
+    .eb-query-card {
+        padding: 22px 18px;
+    }
+}

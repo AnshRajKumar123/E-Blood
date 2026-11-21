@@ -1,0 +1,320 @@
+/* ==========================================================================
+   NOTIFICATIONS HUB STYLES
+   ========================================================================== */
+
+.eb-notif-page-root {
+    padding: 32px 0 80px;
+    background: #f8fafc;
+    min-height: calc(100vh - 260px);
+}
+
+.eb-notif-header-strip {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.eb-notif-title-wrap h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin: 4px 0 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.eb-notif-count-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    background: #fee2e2;
+    color: #e11d48;
+    border-radius: 9999px;
+}
+
+.eb-notif-subtext {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+.eb-notif-top-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.eb-btn-text-action {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #334155;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s ease;
+}
+
+.eb-btn-text-action:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+/* Category Filter Tabs */
+.eb-notif-filter-tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.eb-notif-tab {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 9999px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+}
+
+.eb-notif-tab:hover {
+    color: #0f172a;
+    background: #f8fafc;
+}
+
+.eb-notif-tab.active {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+}
+
+/* Notifications List Deck */
+.eb-notif-deck {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.eb-notif-item-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02);
+}
+
+.eb-notif-item-card.unread {
+    border-left: 4px solid #e11d48;
+    background: #fffdfd;
+}
+
+.eb-notif-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    border-color: #cbd5e1;
+}
+
+/* Icon bubble colors based on category */
+.eb-notif-icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.eb-notif-icon-circle.camp {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.eb-notif-icon-circle.emergency {
+    background: #ffe4e6;
+    color: #e11d48;
+}
+
+.eb-notif-icon-circle.bank {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.eb-notif-icon-circle.announcement {
+    background: #faf5ff;
+    color: #9333ea;
+}
+
+.eb-notif-icon-circle.reminder {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.eb-notif-content {
+    flex: 1;
+}
+
+.eb-notif-content-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.eb-notif-content-top h3 {
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.eb-notif-time {
+    font-size: 11.5px;
+    color: #94a3b8;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.eb-notif-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #475569;
+    margin: 0 0 12px;
+}
+
+.eb-notif-footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.eb-notif-badge-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.eb-notif-type-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.eb-notif-type-tag.camp {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.eb-notif-type-tag.emergency {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.eb-notif-type-tag.bank {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.eb-notif-type-tag.announcement {
+    background: #f3e8ff;
+    color: #6b21a8;
+}
+
+.eb-notif-type-tag.reminder {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.eb-notif-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-notif-action-btn:hover {
+    background: #f8fafc;
+    border-color: #e11d48;
+    color: #e11d48;
+}
+
+/* Empty State Box */
+.eb-notif-empty-state {
+    background: #ffffff;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 18px;
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.eb-notif-empty-state h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 4px 0 0;
+}
+
+.eb-notif-empty-state p {
+    font-size: 13.5px;
+    color: #64748b;
+    max-width: 440px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .eb-notif-item-card {
+        flex-direction: column;
+    }
+    .eb-notif-content-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .eb-notif-footer-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .eb-notif-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

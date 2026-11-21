@@ -1,0 +1,202 @@
+/* ==========================================================================
+   ADMIN LOGIN - WHITE / RED / BLACK MODERN PALETTE
+   ========================================================================== */
+
+.eb-admin-auth-root {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.eb-admin-auth-card {
+    background: #ffffff;
+    border: 1.5px solid #e4e4e7;
+    border-radius: 24px;
+    padding: 40px 34px;
+    width: 100%;
+    max-width: 430px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.eb-auth-header {
+    margin-bottom: 24px;
+}
+
+.eb-auth-emblem {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: #fff1f2;
+    border: 1.5px solid #fecdd3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.12);
+}
+
+.eb-auth-emblem img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.eb-auth-header h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #0a0a0a;
+    letter-spacing: -0.5px;
+}
+
+.eb-auth-header p {
+    margin: 0;
+    font-size: 13.5px;
+    color: #71717a;
+    line-height: 1.5;
+}
+
+/* Error Banner */
+.eb-auth-error-banner {
+    background: #fff1f2;
+    border: 1.5px solid #fecdd3;
+    color: #be123c;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 11px 14px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Form Styling */
+.eb-auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.eb-auth-field label {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #71717a;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 6px;
+}
+
+.eb-input-icon-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.eb-input-icon-box > svg:first-of-type {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.eb-input-icon-box input {
+    width: 100%;
+    height: 46px;
+    background: #fafafa;
+    border: 1.5px solid #e4e4e7;
+    border-radius: 12px;
+    padding: 0 44px 0 42px; /* Right padding ensures text never overlaps eye toggle */
+    color: #0a0a0a;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+}
+
+.eb-input-icon-box input:focus {
+    border-color: #e11d48;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
+}
+
+/* Password Eye Button Fix */
+.eb-toggle-pass-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent !important;
+    border: none !important;
+    color: #94a3b8 !important;
+    cursor: pointer !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 8px;
+    z-index: 5;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+.eb-toggle-pass-btn:hover {
+    color: #e11d48 !important;
+    background: #fff1f2 !important;
+}
+
+.eb-toggle-pass-btn svg {
+    display: block;
+    pointer-events: none;
+}
+
+/* Submit Button */
+.eb-btn-auth-submit {
+    height: 46px;
+    border-radius: 12px;
+    background: #e11d48;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.28);
+    margin-top: 6px;
+    transition: all 0.15s ease;
+}
+
+.eb-btn-auth-submit:hover:not(:disabled) {
+    background: #be123c;
+    transform: translateY(-1px);
+}
+
+.eb-btn-auth-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.eb-auth-footer-notice {
+    margin-top: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #71717a;
+}

@@ -1,0 +1,475 @@
+/* ==========================================================================
+   TOP NAVBAR STYLES
+   ========================================================================== */
+
+.eb-navbar-root {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--eb-border-light, #e2e8f0);
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+    will-change: transform;
+}
+
+.eb-navbar-root.eb-navbar-hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
+}
+
+.eb-navbar-root:not(.eb-navbar-hidden) {
+    transform: translateY(0);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+}
+
+.eb-navbar-container {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 16px;
+}
+
+/* Brand Logo */
+.eb-brand-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.eb-brand-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.eb-brand-name {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-top: 5px;
+    display: inline-block;
+
+    /* Bright Crimson Red to Deep Dark Blood Red Linear Gradient */
+    background: linear-gradient(135deg, #e11d48 0%, #b91c1c 45%, #580c1f 180%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Desktop Center Navigation */
+.eb-center-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.eb-nav-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.eb-nav-dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: transparent;
+    border: none;
+    border-radius: 9999px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--eb-text-title, #0f172a);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.eb-nav-dropdown-trigger:hover,
+.eb-nav-dropdown-trigger.active {
+    color: var(--eb-crimson, #e11d48);
+    background: #f8fafc;
+}
+
+.eb-chevron {
+    color: #94a3b8;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease;
+}
+
+.eb-chevron.rotate {
+    transform: rotate(180deg);
+    color: var(--eb-crimson, #e11d48);
+}
+
+/* Dropdown Floating Menus */
+.eb-nav-custom-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 240px;
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.03);
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 1200;
+    animation: navMenuFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.eb-login-menu-align {
+    left: auto;
+    right: 0;
+    min-width: 220px;
+}
+
+.eb-nav-custom-item {
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.12s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eb-nav-custom-item:hover {
+    background: #f8fafc;
+    color: var(--eb-crimson, #e11d48);
+}
+
+.eb-soon-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 9999px;
+}
+
+.org-text-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.org-text-stack strong {
+    font-size: 13.5px;
+    color: #0f172a;
+}
+
+.org-text-stack small {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+/* Right Nav Actions */
+.eb-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.eb-lang-toggle {
+    background: #f1f5f9;
+    border: 1px solid var(--eb-border-light, #e2e8f0);
+    border-radius: 9999px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.eb-lang-toggle span {
+    padding: 4px 8px;
+    border-radius: 9999px;
+    cursor: pointer;
+    color: var(--eb-text-muted, #64748b);
+    transition: all 0.15s ease;
+}
+
+.eb-lang-toggle span.active {
+    background: var(--eb-crimson, #e11d48);
+    color: #ffffff;
+}
+
+.eb-user-profile-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px 4px 4px;
+    background: #ffffff;
+    border: 1.5px solid var(--eb-border-light, #e2e8f0);
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.eb-user-avatar-bubble {
+    width: 28px;
+    height: 28px;
+    background: var(--eb-crimson, #e11d48);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.eb-guest-login-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #ffffff;
+    border: 1.5px solid var(--eb-border-light, #e2e8f0);
+    border-radius: 9999px;
+    color: var(--eb-text-title, #0f172a);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-guest-login-btn:hover,
+.eb-guest-login-btn.active {
+    border-color: var(--eb-crimson, #e11d48);
+    color: var(--eb-crimson, #e11d48);
+    background: var(--eb-rose-light, #fff1f2);
+}
+
+.eb-mobile-menu-trigger {
+    background: transparent;
+    border: none;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   MOBILE TOP SLIDE-DOWN DRAWER
+   ========================================================================== */
+.eb-mobile-drawer {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.1);
+    z-index: 999;
+    animation: drawerSlide 0.2s ease-out;
+}
+
+.eb-mobile-drawer-inner {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.eb-drawer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.eb-drawer-heading {
+    font-size: 11px;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.eb-drawer-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s ease;
+}
+
+.eb-drawer-btn:active,
+.eb-drawer-btn.active {
+    background: #fff1f2;
+    border-color: #fecdd3;
+    color: #e11d48;
+}
+
+/* ==========================================================================
+   2. BOTTOM APP NAVIGATION BAR (Mobile Native Layout)
+   ========================================================================== */
+.eb-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1000;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.eb-bottom-nav-item {
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: #64748b;
+    font-size: 10.5px;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 1;
+    padding: 4px 0;
+    transition: color 0.15s ease;
+}
+
+.eb-bottom-nav-item.active {
+    color: var(--eb-crimson, #e11d48);
+}
+
+/* Elevated Floating Donate Button in Bottom Nav */
+.eb-bottom-nav-item.center-fab {
+    position: relative;
+    top: -12px;
+}
+
+.eb-bottom-nav-item.center-fab .fab-inner {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--eb-crimson, #e11d48);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35);
+    border: 3px solid #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.eb-bottom-nav-item.center-fab:active .fab-inner {
+    transform: scale(0.92);
+}
+
+/* Visibility Control Classes */
+.mobile-only {
+    display: none !important;
+}
+
+.desktop-only {
+    display: inline-block;
+}
+
+@keyframes navMenuFadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drawerSlide {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (Mobile < 860px)
+   ========================================================================== */
+@media (max-width: 860px) {
+    .eb-center-nav {
+        display: none !important;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: flex !important;
+    }
+
+    .user-name-text {
+        display: none; /* Icon-only user avatar on mobile header */
+    }
+
+    .eb-user-profile-badge {
+        padding: 4px;
+    }
+
+    /* Reserve space at bottom of document for fixed bottom navigation bar */
+    body {
+        padding-bottom: 64px;
+    }
+}
+
+/* Interactive Language Toggle */
+.eb-lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 3px;
+    border-radius: 9999px;
+    border: 1px solid #e2e8f0;
+}
+
+.eb-lang-toggle span {
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.eb-lang-toggle span:hover {
+    color: var(--eb-crimson, #e11d48);
+}
+
+.eb-lang-toggle span.active {
+    background: #ffffff;
+    color: var(--eb-crimson, #e11d48);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}

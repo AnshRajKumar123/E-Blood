@@ -1,0 +1,497 @@
+/* ==========================================================================
+   FIND A BLOOD CAMP - CLEAN RED, WHITE & BLACK THEME
+   Fixes narrow inputs, broken filters & misaligned card buttons
+   ========================================================================== */
+
+.eb-camps-page-root {
+    padding: 24px 0 80px;
+    background: #f8fafc;
+    min-height: calc(100vh - 240px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Hero Header */
+.eb-camps-hero {
+    text-align: center;
+    max-width: 760px;
+    margin: 8px auto 28px;
+}
+
+.eb-camps-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #e11d48;
+    background: #ffe4e6;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.eb-camps-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.6px;
+    margin: 0 0 10px;
+}
+
+.eb-camps-subtitle {
+    font-size: 14.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================================================
+   HORIZONTAL FILTER DOCK BAR
+   ========================================================================== */
+.eb-camp-filter-dock {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.04);
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
+.dock-unit {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dock-unit label {
+    font-size: 11px;
+    font-weight: 800;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dock-unit.search-unit {
+    flex: 2;
+    min-width: 240px;
+}
+
+.dock-unit.district-unit {
+    flex: 1;
+    min-width: 180px;
+}
+
+.dock-action-unit {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.dock-input-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.dock-input-inner svg {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.dock-input-inner input {
+    width: 100%;
+    height: 44px;
+    background: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 0 14px 0 40px;
+    color: #0f172a;
+    font-size: 13.5px;
+    outline: none;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+}
+
+.dock-input-inner input:focus {
+    background: #ffffff;
+    border-color: #e11d48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
+}
+
+.dock-select-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.dock-select-wrap select {
+    width: 100%;
+    height: 44px;
+    background: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 0 34px 0 14px;
+    color: #0f172a;
+    font-size: 13.5px;
+    font-weight: 600;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.15s ease;
+}
+
+.dock-select-wrap select:focus {
+    background: #ffffff;
+    border-color: #e11d48;
+}
+
+.select-chevron {
+    position: absolute;
+    right: 12px;
+    color: #64748b;
+    pointer-events: none;
+}
+
+.eb-btn-dock-register {
+    height: 44px;
+    padding: 0 20px;
+    border-radius: 12px;
+    background: #e11d48;
+    color: #ffffff;
+    border: none;
+    font-size: 13.5px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+    transition: all 0.15s ease;
+}
+
+.eb-btn-dock-register:hover {
+    background: #be123c;
+    transform: translateY(-1px);
+}
+
+/* Results Count Strip */
+.eb-camps-meta-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.camps-count-label {
+    font-size: 14px;
+    color: #475569;
+}
+
+.camps-count-label strong {
+    color: #e11d48;
+    font-weight: 800;
+}
+
+.btn-clear-camp-filter {
+    background: none;
+    border: none;
+    color: #e11d48;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   CAMP CARDS 3-COLUMN GRID
+   ========================================================================== */
+.eb-camps-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.eb-camp-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.eb-camp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+    border-color: #cbd5e1;
+}
+
+/* Card Header Carousel */
+.eb-camp-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+.eb-camp-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.eb-camp-carousel-slide {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.eb-camp-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Slide Indicators */
+.eb-carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    display: flex;
+    gap: 5px;
+    z-index: 5;
+}
+
+.eb-carousel-indicators .eb-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
+}
+
+.eb-carousel-indicators .eb-dot.active {
+    background: #ffffff;
+    width: 14px;
+    border-radius: 9999px;
+}
+
+/* Card Body */
+.eb-camp-card-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.camp-top-badge-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.camp-district-pill {
+    font-size: 11px;
+    font-weight: 800;
+    color: #0f172a;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.camp-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #15803d;
+    background: #dcfce7;
+    padding: 2px 8px;
+    border-radius: 9999px;
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #16a34a;
+}
+
+.camp-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 12px;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 42px;
+}
+
+/* Specs List */
+.camp-specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.spec-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12.5px;
+    color: #475569;
+    line-height: 1.4;
+}
+
+.spec-line strong {
+    color: #0f172a;
+}
+
+.spec-ico {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.spec-ico.red { color: #e11d48; }
+.spec-ico.black { color: #0f172a; }
+.spec-ico.gray { color: #64748b; }
+.spec-ico.green { color: #16a34a; }
+
+/* Call & WhatsApp Actions */
+.camp-card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.btn-camp-call {
+    flex: 1;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 12.5px;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-camp-call:hover {
+    background: #e11d48;
+    transform: translateY(-1px);
+}
+
+.btn-camp-whatsapp {
+    flex: 1;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    color: #15803d;
+    font-size: 12.5px;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-camp-whatsapp:hover {
+    background: #25d366;
+    border-color: #25d366;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Empty State */
+.eb-camp-empty-box {
+    background: #ffffff;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 20px;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.empty-ico-ring {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff1f2;
+    color: #e11d48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+}
+
+.eb-camp-empty-box h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.eb-camp-empty-box p {
+    margin: 0;
+    font-size: 13.5px;
+    color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .eb-camps-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .eb-camp-filter-dock {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .dock-action-unit {
+        width: 100%;
+    }
+    .eb-btn-dock-register {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .eb-camps-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

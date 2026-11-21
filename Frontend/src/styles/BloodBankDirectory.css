@@ -1,0 +1,529 @@
+/* ==========================================================================
+   BLOOD BANK DIRECTORY PAGE STYLING (CRIMSON, BLOOD-RED, BLACK & WHITE)
+   ========================================================================== */
+
+.eb-directory-page-root {
+    padding: 24px 0 80px;
+    background: #f8fafc;
+    min-height: calc(100vh - 280px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.eb-directory-header {
+    margin-bottom: 20px;
+}
+
+.eb-directory-title {
+    font-size: 28px;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin: 4px 0 6px;
+}
+
+.eb-directory-sub {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* ==========================================================================
+   TOP FILTER BAR
+   ========================================================================== */
+.eb-directory-filter-section {
+    margin-bottom: 24px;
+}
+
+.filter-label-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.filter-label-row label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.not-sure-link {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e11d48;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Blood Group Filter Pills */
+.eb-bg-pill-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.eb-bg-select-btn {
+    padding: 7px 14px;
+    border-radius: 9999px;
+    border: 1.5px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-bg-select-btn:hover {
+    border-color: #e11d48;
+    color: #e11d48;
+}
+
+.eb-bg-select-btn.active {
+    background: #e11d48;
+    border-color: #e11d48;
+    color: #ffffff;
+    box-shadow: 0 3px 8px rgba(225, 29, 72, 0.25);
+}
+
+/* Location Selector Row */
+.eb-directory-location-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.eb-filter-field {
+    min-width: 150px;
+    flex: 1;
+}
+
+.hospital-search-field {
+    flex: 1.5;
+    min-width: 220px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hospital-search-field input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 0 38px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
+    outline: none;
+    background: #ffffff;
+    box-sizing: border-box;
+    transition: all 0.15s ease;
+}
+
+.hospital-search-field input:focus {
+    border-color: #e11d48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
+}
+
+.hospital-search-field .search-ico {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.eb-loc-detected-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+    padding: 10px 16px;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 9999px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+}
+
+.eb-loc-detected-pill:hover {
+    border-color: #e11d48;
+    color: #e11d48;
+}
+
+/* ==========================================================================
+   SPLIT LAYOUT (CARDS & MAP)
+   ========================================================================== */
+.eb-directory-split-layout {
+    display: grid;
+    grid-template-columns: 440px 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.eb-radius-selector-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.radius-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+    margin-right: 4px;
+}
+
+.eb-radius-chip {
+    padding: 6px 14px;
+    border-radius: 9999px;
+    border: 1.5px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-radius-chip:hover {
+    border-color: #e11d48;
+    color: #e11d48;
+}
+
+.eb-radius-chip.active {
+    border-color: #e11d48;
+    color: #e11d48;
+    background: #ffe4e6;
+}
+
+.eb-banks-counter-text {
+    font-size: 13.5px;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+.eb-banks-counter-text strong {
+    color: #e11d48;
+    font-weight: 900;
+}
+
+.eb-bank-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 580px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.eb-bank-item-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 16px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.eb-bank-item-card:hover,
+.eb-bank-item-card.highlighted {
+    border-color: #e11d48;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.08);
+}
+
+.eb-bank-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.eb-bank-card-header h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.eb-units-badge {
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 9999px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.eb-units-badge.low {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.eb-bank-subtext {
+    font-size: 12.5px;
+    color: #64748b;
+    margin: 0 0 12px;
+}
+
+.eb-bank-action-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-icon-sq {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1.5px solid #cbd5e1;
+    background: #ffffff;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-icon-sq:hover {
+    border-color: #e11d48;
+    color: #e11d48;
+}
+
+.btn-bank-call {
+    flex: 1;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 14px;
+    border-radius: 10px;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-bank-call:hover {
+    background: #e11d48;
+}
+
+/* ==========================================================================
+   LEAFLET MAP & PIN DESIGN (CRIMSON SVG PINS & RADAR BEACON)
+   ========================================================================== */
+.eb-directory-map-container {
+    background: #e2e8f0;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 20px;
+    height: 580px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.eb-custom-leaflet-container {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* 1. Blood Bank Crimson & Maroon SVG Teardrop Pin */
+.eb-blood-svg-marker {
+    position: relative;
+    width: 34px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.eb-blood-svg-marker:hover {
+    transform: scale(1.15) translateY(-2px);
+}
+
+.marker-pin-bubble {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #e11d48;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.marker-pin-tip {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #e11d48;
+    margin-top: -2px;
+}
+
+/* Low Stock Alert State */
+.eb-blood-svg-marker.low-stock .marker-pin-bubble {
+    background: #991b1b;
+}
+
+.eb-blood-svg-marker.low-stock .marker-pin-tip {
+    border-top-color: #991b1b;
+}
+
+/* 2. User Location Radar Beacon */
+.eb-user-beacon-pin {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.beacon-core-dot {
+    width: 12px;
+    height: 12px;
+    background: #0a0a0a;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.beacon-pulse-wave {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background: rgba(225, 29, 72, 0.3);
+    border: 1.5px solid #e11d48;
+    border-radius: 50%;
+    animation: beaconPulse 1.8s ease-out infinite;
+    z-index: 1;
+}
+
+@keyframes beaconPulse {
+    0% { transform: scale(0.6); opacity: 1; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Popup Card */
+.eb-map-card-popup {
+    font-family: inherit;
+    padding: 4px;
+    min-width: 190px;
+}
+
+.popup-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #0f172a;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.popup-units-badge {
+    display: inline-block;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.popup-units-badge.low {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.popup-address {
+    display: block;
+    font-size: 11.5px;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.popup-call-link {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #e11d48;
+    text-decoration: underline;
+}
+
+/* Callout Card */
+.eb-not-enough-stock-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+    flex-wrap: wrap;
+}
+
+.eb-not-enough-stock-card h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px;
+}
+
+.eb-not-enough-stock-card p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.btn-emergency-find {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e11d48;
+    color: #ffffff;
+    padding: 11px 22px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+    transition: all 0.15s ease;
+}
+
+.btn-emergency-find:hover {
+    background: #be123c;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+    .eb-directory-split-layout {
+        grid-template-columns: 1fr;
+    }
+    .eb-directory-map-container {
+        height: 340px;
+        order: -1;
+    }
+}

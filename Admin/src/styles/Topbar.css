@@ -1,0 +1,72 @@
+/* ==========================================================================
+   STICKY TOPBAR - CLEAN WHITE WITH FROSTED BACKDROP
+   ========================================================================== */
+
+.eb-topbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1.5px solid #f1f5f9;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.eb-topbar-wrapper h2 {
+    margin: 0 0 2px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #0a0a0a;
+    letter-spacing: -0.4px;
+}
+
+.eb-topbar-wrapper small {
+    color: #71717a;
+    font-size: 12px;
+    display: block;
+}
+
+.eb-topbar-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.live-beacon-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 11.5px;
+    font-weight: 800;
+}
+
+.live-beacon-pill .beacon-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #16a34a;
+}
+
+.admin-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fafafa;
+    border: 1.5px solid #e4e4e7;
+    color: #0a0a0a;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 12.5px;
+    font-weight: 800;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}

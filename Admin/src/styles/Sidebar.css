@@ -1,0 +1,210 @@
+/* ==========================================================================
+   FIXED POSITION SIDEBAR - WHITE / CRIMSON / BLACK THEME
+   ========================================================================== */
+
+.eb-sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    height: 100vh;
+    background: #ffffff;
+    border-right: 1.5px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+    user-select: none;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Custom minimal scrollbar for sidebar if content overflows */
+.eb-sidebar-container::-webkit-scrollbar {
+    width: 4px;
+}
+.eb-sidebar-container::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 4px;
+}
+
+/* Brand Section */
+.eb-sidebar-brand-box {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1.5px solid #f1f5f9;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.eb-logo-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.eb-logo-circle img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.eb-brand-titles {
+    display: flex;
+    flex-direction: column;
+}
+
+.eb-brand-main {
+    font-size: 18px;
+    font-weight: 900;
+    color: #0a0a0a;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
+}
+
+.eb-brand-badge {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #e11d48;
+    letter-spacing: 0.8px;
+}
+
+/* Navigation List */
+.eb-sidebar-nav-list {
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.eb-sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s ease;
+    width: 100%;
+}
+
+.eb-sidebar-item:hover {
+    background: #f8fafc;
+    color: #0a0a0a;
+}
+
+.eb-sidebar-item.active {
+    background: #e11d48;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.28);
+}
+
+.eb-sidebar-item.active .sidebar-icon {
+    color: #ffffff;
+}
+
+/* Bottom Profile & Sign Out */
+.eb-sidebar-bottom {
+    padding: 16px;
+    border-top: 1.5px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.eb-admin-mini-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: #fafafa;
+    cursor: pointer;
+    border: 1px solid #f1f5f9;
+    transition: all 0.15s ease;
+}
+
+.eb-admin-mini-profile:hover {
+    background: #fff1f2;
+    border-color: #fecdd3;
+}
+
+.eb-mini-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e11d48;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.25);
+}
+
+.eb-mini-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.eb-mini-info strong {
+    font-size: 13px;
+    color: #0a0a0a;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.eb-mini-info small {
+    font-size: 11px;
+    color: #71717a;
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.eb-sidebar-btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1.5px solid #f1f5f9;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    width: 100%;
+}
+
+.eb-sidebar-btn-logout:hover {
+    background: #fff1f2;
+    border-color: #fecdd3;
+    color: #e11d48;
+}

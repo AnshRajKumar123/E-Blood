@@ -1,0 +1,370 @@
+/* ==========================================================================
+   E-BLOOD SPLASH SCREEN STYLING (EXPANDED RICH LAYOUT)
+   ========================================================================== */
+
+.eb-splash-screen-root {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Multilayer deep arterial blood into rich velvet gradient */
+    background: radial-gradient(circle at 50% 40%, #a81538 0%, #6d0a20 50%, #3a040f 100%);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s ease;
+    will-change: opacity, transform;
+}
+
+.eb-splash-screen-root.eb-splash-fade-out {
+    opacity: 0;
+    transform: scale(1.03);
+    pointer-events: none;
+}
+
+/* Ambient Fluid Wave Glows */
+.eb-splash-bg-decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.eb-splash-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.28;
+}
+
+.eb-splash-blob.blob-1 {
+    width: 440px;
+    height: 440px;
+    background: #ff2a55;
+    top: -100px;
+    right: -100px;
+    animation: splashFloat 7s ease-in-out infinite alternate;
+}
+
+.eb-splash-blob.blob-2 {
+    width: 520px;
+    height: 520px;
+    background: #420410;
+    bottom: -140px;
+    left: -140px;
+    animation: splashFloat 9s ease-in-out infinite alternate-reverse;
+}
+
+.eb-splash-blob.blob-3 {
+    width: 320px;
+    height: 320px;
+    background: #ff758f;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.14;
+}
+
+@keyframes splashFloat {
+    0% { transform: translateY(0px) scale(1); }
+    100% { transform: translateY(32px) scale(1.1); }
+}
+
+/* Top Subtle Trust Pill */
+.eb-splash-top-pill {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+    backdrop-filter: blur(8px);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #fecdd3;
+    animation: splashFadeIn 0.8s ease-out;
+}
+
+.eb-splash-top-pill .pill-ico {
+    color: #fda4af;
+}
+
+/* Center Content Box */
+.eb-splash-content-box {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 580px;
+    margin: auto 0;
+    animation: splashContentEntrance 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes splashContentEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(24px) scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes splashFadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo Frame with Dual Pulsing Rings */
+.eb-splash-logo-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.eb-splash-ring {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.eb-splash-ring.ring-outer {
+    inset: -12px;
+    border: 1.5px dashed rgba(255, 255, 255, 0.22);
+    animation: splashRotate 20s linear infinite;
+}
+
+.eb-splash-ring.ring-inner {
+    inset: -4px;
+    border: 1.5px solid rgba(255, 77, 109, 0.45);
+    box-shadow: 0 0 25px rgba(255, 77, 109, 0.35);
+    animation: splashPulse 2s ease-in-out infinite;
+}
+
+/* Frosted Backdrop Emblem Container */
+.eb-splash-logo-card {
+    width: 110px;
+    height: 110px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: splashHeartbeat 1.8s ease-in-out infinite;
+}
+
+.eb-splash-logo-img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+}
+
+@keyframes splashRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes splashPulse {
+    0%, 100% { transform: scale(0.96); opacity: 0.4; }
+    50% { transform: scale(1.08); opacity: 0.9; }
+}
+
+@keyframes splashHeartbeat {
+    0% { transform: scale(1); }
+    12% { transform: scale(1.07); }
+    24% { transform: scale(1); }
+    36% { transform: scale(1.04); }
+    60% { transform: scale(1); }
+}
+
+/* Title & Wordmark */
+.eb-splash-title {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+    color: #ffffff;
+    margin: 0 0 6px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.eb-splash-tagline-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+
+.eb-splash-line {
+    width: 36px;
+    height: 1.5px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.eb-splash-tagline {
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    color: #ffe4e6;
+    text-transform: uppercase;
+}
+
+.eb-splash-subtext {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0 0 18px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* ECG / Pulse Wave Line */
+.eb-splash-ecg-container {
+    width: 220px;
+    height: 28px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.85;
+}
+
+.eb-splash-ecg-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.eb-splash-ecg-path {
+    fill: none;
+    stroke: #ff758f;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: ecgPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes ecgPulse {
+    0% { stroke-dashoffset: 300; opacity: 0.2; }
+    50% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: -300; opacity: 0.2; }
+}
+
+/* Stage Status Text */
+.eb-splash-stage-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffe4e6;
+    margin-bottom: 14px;
+    min-height: 20px;
+}
+
+.spin-slow {
+    animation: spinSlow 3s linear infinite;
+    color: #ff4d6d;
+}
+
+@keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Loading Progress Bar */
+.eb-splash-loader-bar {
+    width: 220px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 9999px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.eb-splash-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff4d6d 0%, #ffffff 100%);
+    border-radius: 9999px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+    animation: splashFill 2.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes splashFill {
+    0% { width: 0%; }
+    40% { width: 45%; }
+    75% { width: 85%; }
+    100% { width: 100%; }
+}
+
+/* Three Trust Chips */
+.eb-splash-features-strip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.eb-splash-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.chip-dot {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 10px;
+}
+
+/* Bottom Legal Watermark */
+.eb-splash-footer-note {
+    position: relative;
+    z-index: 2;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    color: rgba(255, 255, 255, 0.42);
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .eb-splash-title {
+        font-size: 34px;
+    }
+    .eb-splash-features-strip {
+        gap: 6px;
+        font-size: 10px;
+    }
+    .chip-dot {
+        display: none;
+    }
+}

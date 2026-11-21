@@ -1,0 +1,634 @@
+/* ==========================================================================
+   ADMIN PROFILE & TEAM TASKS - WHITE, BLOOD-RED, BLACK PALETTE
+   ========================================================================== */
+
+.eb-profile-page-canvas {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Top Grid: Profile Card & Team Showcase */
+.eb-profile-top-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 20px;
+}
+
+.eb-profile-card-pane,
+.eb-team-roster-pane,
+.eb-task-creator-pane,
+.eb-tasks-list-pane {
+    background: #ffffff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* Profile Pane Header */
+.pane-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 18px;
+}
+
+.pane-avatar-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+    flex-shrink: 0;
+}
+
+.pane-header h2 {
+    margin: 0 0 3px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #0a0a0a;
+}
+
+.role-tag-red {
+    display: inline-block;
+    background: #ffe4e6;
+    color: #e11d48;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
+
+.pane-header small {
+    display: block;
+    color: #71717a;
+    font-size: 12px;
+}
+
+/* Status Banner */
+.status-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.status-banner.success {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #86efac;
+}
+
+.status-banner.error {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecdd3;
+}
+
+/* Forms */
+.eb-profile-edit-form,
+.task-creator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-field-pair {
+    display: flex;
+    gap: 14px;
+}
+
+.form-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-col label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #71717a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-col input,
+.form-col select,
+.form-col textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background: #fafafa;
+    border: 1.5px solid #e4e4e7;
+    border-radius: 10px;
+    font-size: 13.5px;
+    color: #0a0a0a;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: all 0.15s ease;
+}
+
+.form-col input:focus,
+.form-col select:focus,
+.form-col textarea:focus {
+    border-color: #e11d48;
+    background: #ffffff;
+}
+
+.btn-save-profile-action,
+.btn-assign-task-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    background: #e11d48;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+    margin-top: 4px;
+    width: fit-content;
+    transition: all 0.15s ease;
+}
+
+.btn-save-profile-action:hover,
+.btn-assign-task-action:hover {
+    background: #be123c;
+    transform: translateY(-1px);
+}
+
+/* Team Roster List */
+.roster-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.roster-header h3 {
+    margin: 0 0 2px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #0a0a0a;
+}
+
+.roster-header small {
+    font-size: 11.5px;
+    color: #71717a;
+}
+
+.roster-admins-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.roster-item-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #fafafa;
+    border: 1px solid #f4f4f5;
+    transition: all 0.15s ease;
+}
+
+.roster-item-card.current-logged {
+    background: #fff1f2;
+    border-color: #fecdd3;
+}
+
+.roster-disc {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #0a0a0a;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.roster-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.roster-name-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.roster-name-row strong {
+    font-size: 13.5px;
+    color: #0a0a0a;
+}
+
+.super-pill {
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.you-pill {
+    background: #18181b;
+    color: #ffffff;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.roster-role-text {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #e11d48;
+    margin-top: 1px;
+}
+
+.roster-email {
+    font-size: 11px;
+    color: #71717a;
+}
+
+/* Bottom Grid: Tasks Delegation */
+.eb-tasks-board-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 20px;
+}
+
+.task-creator-head h3,
+.tasks-list-head h3 {
+    margin: 0 0 2px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #0a0a0a;
+}
+
+.task-creator-head small,
+.tasks-list-head small {
+    font-size: 11.5px;
+    color: #71717a;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.tasks-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-entry-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #fafafa;
+    border: 1px solid #f4f4f5;
+    transition: all 0.15s ease;
+}
+
+.task-entry-item.completed-task {
+    opacity: 0.6;
+    background: #f8fafc;
+}
+
+.task-check-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 1.5px solid #cbd5e1;
+    background: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #15803d;
+    padding: 0;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.task-check-circle.checked {
+    background: #dcfce7;
+    border-color: #86efac;
+}
+
+.task-main-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-top-tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.priority-tag {
+    font-size: 9.5px;
+    font-weight: 900;
+    padding: 1px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.priority-tag.critical {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.priority-tag.high {
+    background: #ffe4e6;
+    color: #e11d48;
+}
+
+.priority-tag.medium {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.priority-tag.low {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.assignee-tag {
+    font-size: 11px;
+    color: #71717a;
+}
+
+.assignee-tag strong {
+    color: #0a0a0a;
+}
+
+.task-item-title {
+    font-size: 13.5px;
+    color: #0a0a0a;
+    display: block;
+}
+
+.completed-task .task-item-title {
+    text-decoration: line-through;
+}
+
+.task-item-desc {
+    margin: 4px 0;
+    font-size: 12px;
+    color: #52525b;
+    line-height: 1.4;
+}
+
+.task-item-meta {
+    font-size: 11px;
+    color: #a1a1aa;
+    display: block;
+}
+
+.btn-delete-task {
+    background: none;
+    border: none;
+    color: #a1a1aa;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.btn-delete-task:hover {
+    color: #e11d48;
+    background: #fee2e2;
+}
+
+.tasks-empty-state {
+    padding: 40px 20px;
+    text-align: center;
+    color: #71717a;
+    font-size: 13px;
+}
+
+/* Greeting Banner on Dashboard */
+.eb-admin-greeting-banner {
+    background: linear-gradient(135deg, #ffffff 0%, #fff1f2 100%);
+    border: 1.5px solid #fecdd3;
+    border-radius: 20px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(225, 29, 72, 0.05);
+}
+
+.banner-role-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #e11d48;
+    background: #ffe4e6;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    margin-bottom: 8px;
+}
+
+.banner-left-info h2 {
+    margin: 0 0 4px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #0a0a0a;
+    letter-spacing: -0.4px;
+}
+
+.banner-left-info p {
+    margin: 0;
+    font-size: 13.5px;
+    color: #71717a;
+}
+
+.meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #fecdd3;
+    color: #0a0a0a;
+    font-size: 12.5px;
+    font-weight: 800;
+    padding: 8px 14px;
+    border-radius: 12px;
+}
+
+@media (max-width: 1024px) {
+
+    .eb-profile-top-grid,
+    .eb-tasks-board-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   CUSTOM ADMIN DROPDOWN (WHITE / RED / BLACK)
+   ========================================================================== */
+
+.eb-custom-select-box {
+    position: relative;
+    width: 100%;
+}
+
+.eb-custom-select-trigger {
+    width: 100%;
+    height: 44px;
+    background: #fafafa;
+    border: 1.5px solid #e4e4e7;
+    border-radius: 10px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+}
+
+.eb-custom-select-trigger:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+
+.eb-custom-select-trigger.open {
+    border-color: #e11d48;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
+}
+
+.eb-custom-select-trigger .selected-label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0a0a0a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.chevron-indicator {
+    color: #71717a;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+}
+
+.chevron-indicator.rotate {
+    transform: rotate(180deg);
+    color: #e11d48;
+}
+
+.eb-custom-dropdown-portal {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    z-index: 50;
+    padding: 6px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: dropdownPop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownPop {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.eb-custom-option-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 12px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    background: transparent;
+}
+
+.eb-custom-option-item:hover {
+    background: #fff1f2;
+}
+
+.eb-custom-option-item.active {
+    background: #ffe4e6;
+}
+
+.option-title-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.option-title-text strong {
+    font-size: 13px;
+    color: #0a0a0a;
+}
+
+.option-title-text small {
+    font-size: 11px;
+    color: #71717a;
+}
+
+.eb-custom-option-item.active .option-title-text strong {
+    color: #e11d48;
+}
+
+.check-icon {
+    color: #e11d48;
+    flex-shrink: 0;
+}

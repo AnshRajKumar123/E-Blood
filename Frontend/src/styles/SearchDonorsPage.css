@@ -1,0 +1,1414 @@
+/* ==========================================================================
+   SEARCH DONORS PAGE - 2-ROW GRID & SOLID MODAL STYLING
+   ========================================================================== */
+
+.eb-search-page-root {
+    padding: 32px 0 80px;
+    background: #f8fafc;
+    min-height: calc(100vh - 280px);
+}
+
+.eb-search-page-header {
+    margin-bottom: 24px;
+}
+
+.eb-search-page-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.6px;
+    margin: 4px 0 6px;
+}
+
+.eb-search-page-sub {
+    font-size: 14.5px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   2-ROW SEARCH DOCK (HALF UP / HALF DOWN)
+   ========================================================================== */
+.eb-search-dock-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 22px 24px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+.eb-search-dock-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    width: 100%;
+}
+
+.eb-search-dock-row.row-top {
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 16px;
+}
+
+.eb-search-field-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 130px;
+}
+
+.eb-search-field-cell.cell-blood {
+    flex: 1.1;
+    min-width: 180px;
+}
+
+.eb-search-field-cell.cell-pin {
+    flex: 0.8;
+    min-width: 120px;
+}
+
+.eb-search-field-cell.cell-landmark {
+    flex: 1.2;
+    min-width: 180px;
+}
+
+.eb-search-field-cell.cell-range-slider {
+    flex: 1.5;
+    min-width: 210px;
+}
+
+.eb-search-field-cell label {
+    font-size: 11px;
+    font-weight: 800;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.eb-search-field-cell input[type="text"] {
+    padding: 10px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
+    outline: none;
+    background: #ffffff;
+    transition: all 0.15s ease;
+    height: 44px;
+    box-sizing: border-box;
+}
+
+.eb-search-field-cell input[type="text"]:focus {
+    border-color: #e11d48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
+}
+
+.input-with-pin {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.input-with-pin svg {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.input-with-pin input {
+    width: 100%;
+    padding-left: 36px !important;
+}
+
+/* Range Slider Styling */
+.range-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.range-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+}
+
+.range-badge {
+    background: #ffe4e6;
+    color: #e11d48;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 9999px;
+}
+
+.range-slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 4px;
+}
+
+.eb-range-slider-input {
+    width: 100%;
+    height: 6px;
+    border-radius: 9999px;
+    background: #e2e8f0;
+    accent-color: #e11d48;
+    cursor: pointer;
+}
+
+.range-steps-marks {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+/* Action Buttons Cluster */
+.eb-search-dock-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    height: 44px;
+}
+
+.eb-btn-use-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 14px;
+    height: 44px;
+    background: #f1f5f9;
+    border: 1.5px solid #cbd5e1;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-btn-use-location:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.eb-btn-clear-filters {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 14px;
+    height: 44px;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-btn-clear-filters:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+
+.eb-btn-search-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 24px;
+    height: 44px;
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.28);
+    transition: all 0.15s ease;
+}
+
+.eb-btn-search-trigger:hover {
+    background: #be123c;
+    transform: translateY(-1px);
+}
+
+/* Custom Dropdown Styling */
+.eb-custom-search-select {
+    position: relative;
+    width: 100%;
+}
+
+.eb-custom-search-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    height: 44px;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-custom-search-trigger:hover,
+.eb-custom-search-trigger.open {
+    border-color: #e11d48;
+}
+
+.eb-custom-search-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 100;
+    padding: 6px;
+}
+
+.eb-custom-search-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.eb-custom-search-item:hover {
+    background: #f8fafc;
+    color: #e11d48;
+}
+
+.eb-custom-search-item.active {
+    background: #fff1f2;
+    color: #e11d48;
+    font-weight: 800;
+}
+
+/* Results Strip */
+.eb-results-meta-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.eb-results-count {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* Donor Cards Grid */
+.eb-donors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 22px;
+}
+
+.eb-donor-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.eb-donor-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    border-color: #cbd5e1;
+}
+
+.eb-card-top-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.eb-donor-avatar-cluster {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.eb-donor-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff1f2;
+    border: 1.5px solid #fecdd3;
+    color: #e11d48;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eb-donor-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 2px;
+}
+
+.eb-donor-verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.eb-blood-group-badge {
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    box-shadow: 0 3px 8px rgba(225, 29, 72, 0.25);
+}
+
+.eb-donor-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 6px 0 18px;
+}
+
+.eb-detail-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    color: #64748b;
+}
+
+.eb-detail-line svg {
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+.eb-donor-alert-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.eb-btn-alert-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 10px;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    color: #15803d;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-btn-alert-whatsapp:hover {
+    background: #25d366;
+    color: #ffffff;
+    border-color: #25d366;
+    transform: translateY(-1px);
+}
+
+.eb-btn-alert-sms {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 10px;
+    background: #e0f2fe;
+    border: 1px solid #7dd3fc;
+    color: #0369a1;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-btn-alert-sms:hover {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #0284c7;
+    transform: translateY(-1px);
+}
+
+.eb-donor-card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.eb-btn-call-donor {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: #16a34a;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.eb-btn-call-donor:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+.eb-btn-call-donor.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: #94a3b8;
+}
+
+.eb-btn-see-details {
+    padding: 10px 16px;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    color: #0f172a;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-btn-see-details:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+}
+
+/* Empty State */
+.eb-no-donors-box {
+    text-align: center;
+    background: #ffffff;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 20px;
+    padding: 60px 24px;
+    margin-top: 10px;
+}
+
+.eb-no-donors-box h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 10px 0 4px;
+}
+
+.eb-no-donors-box p {
+    font-size: 13.5px;
+    color: #64748b;
+}
+
+/* ==========================================================================
+   RECREATED SOLID MODAL POPUP
+   ========================================================================== */
+.eb-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999 !important;
+    padding: 16px;
+    box-sizing: border-box;
+    animation: fadeInOverlay 0.2s ease-out;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.eb-donor-detail-modal-card {
+    background: #ffffff !important;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 520px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35) !important;
+    border: 1.5px solid #e2e8f0;
+    animation: modalScaleSpring 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 1000000;
+}
+
+@keyframes modalScaleSpring {
+    0% {
+        transform: scale(0.92);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Modal Header */
+.eb-donor-modal-header {
+    background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%);
+    padding: 22px 24px;
+    border-bottom: 1px solid #fecdd3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.eb-modal-profile-strip {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.eb-modal-avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #fff1f2;
+    border: 2px solid #fecdd3;
+    color: #e11d48;
+    font-size: 22px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.eb-modal-name-cluster h3 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 3px;
+}
+
+.eb-modal-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #16a34a;
+}
+
+.eb-modal-top-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.eb-modal-blood-badge {
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+}
+
+.eb-modal-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-modal-close-btn:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+
+/* Modal Body */
+.eb-donor-modal-body {
+    padding: 24px;
+    background: #ffffff !important;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.eb-modal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.eb-modal-section-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.eb-modal-info-box {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.eb-modal-address {
+    font-size: 14.5px;
+    color: #0f172a;
+}
+
+.eb-modal-subaddress {
+    font-size: 12.5px;
+    color: #475569;
+}
+
+.eb-modal-distance-pill {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #e11d48;
+    background: #ffe4e6;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    width: fit-content;
+}
+
+/* Modal Attributes Grid */
+.eb-modal-attributes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.eb-attr-chip {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.eb-attr-chip small {
+    font-size: 10px;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+.eb-attr-chip strong {
+    font-size: 12.5px;
+    color: #0f172a;
+    font-weight: 800;
+}
+
+/* Dispatch Buttons */
+.eb-modal-dispatch-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.eb-modal-btn-whatsapp {
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #dcfce7;
+    border: 1.5px solid #86efac;
+    color: #15803d;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-modal-btn-whatsapp:hover {
+    background: #25d366;
+    color: #ffffff;
+    border-color: #25d366;
+}
+
+.eb-modal-btn-sms {
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #e0f2fe;
+    border: 1.5px solid #7dd3fc;
+    color: #0369a1;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.eb-modal-btn-sms:hover {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #0284c7;
+}
+
+/* Direct Call Action */
+.eb-modal-btn-call {
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #16a34a;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+    transition: background 0.15s ease, transform 0.1s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.eb-modal-btn-call:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+.eb-modal-btn-call.disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .eb-search-dock-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .eb-search-dock-row.row-top {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .eb-search-field-cell {
+        width: 100%;
+    }
+
+    .eb-search-dock-actions {
+        width: 100%;
+        display: flex;
+    }
+
+    .eb-btn-use-location,
+    .eb-btn-clear-filters,
+    .eb-btn-search-trigger {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* Native Select inside input-with-pin */
+.eb-native-select {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 0 36px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
+    background: #ffffff;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.15s ease;
+}
+
+.eb-native-select:focus {
+    border-color: #e11d48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
+}
+
+/* ==========================================================================
+   CUSTOM SEARCH DROPDOWNS (WHITE / RED / BLACK)
+   ========================================================================== */
+
+.eb-custom-search-select {
+    position: relative;
+    width: 100%;
+}
+
+.eb-custom-search-trigger {
+    width: 100%;
+    height: 44px;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.eb-custom-search-trigger:hover {
+    border-color: #94a3b8;
+}
+
+.eb-custom-search-trigger.open {
+    border-color: #e11d48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
+}
+
+.trigger-text {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.trigger-text.muted {
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.chevron-arrow {
+    color: #64748b;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+}
+
+.chevron-arrow.rotate {
+    transform: rotate(180deg);
+    color: #e11d48;
+}
+
+/* Dropdown Menu Overlay */
+.eb-custom-search-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    min-width: 220px;
+    background: #ffffff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 14px;
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
+    z-index: 1000;
+    padding: 6px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: dropdownPop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownPop {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Embedded Search Input inside State Dropdown */
+.dropdown-search-wrap {
+    position: relative;
+    padding: 4px 6px 6px;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 4px;
+}
+
+.dropdown-search-input {
+    width: 100%;
+    height: 34px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0 10px 0 32px;
+    font-size: 12.5px;
+    color: #0f172a;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.15s ease;
+}
+
+.dropdown-search-input:focus {
+    border-color: #e11d48;
+    background: #ffffff;
+}
+
+/* Scrollable Options */
+.dropdown-options-scroll {
+    max-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dropdown-options-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.dropdown-options-scroll::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 9999px;
+}
+
+.eb-custom-search-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    transition: all 0.15s ease;
+}
+
+.eb-custom-search-item:hover {
+    background: #fff1f2;
+    color: #e11d48;
+}
+
+.eb-custom-search-item.active {
+    background: #ffe4e6;
+    color: #e11d48;
+    font-weight: 800;
+}
+
+.check-indicator {
+    color: #e11d48;
+    flex-shrink: 0;
+}
+
+.dropdown-empty-row {
+    padding: 12px;
+    text-align: center;
+    font-size: 12.5px;
+    color: #94a3b8;
+}
+
+.SearchDataInput {
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 120;
+}
+
+/* ==========================================================================
+   INITIAL PROMPT PLACEHOLDER (BEFORE SEARCH)
+   ========================================================================== */
+.eb-search-initial-placeholder {
+    background: #ffffff;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 20px;
+    padding: 60px 24px;
+    text-align: center;
+    max-width: 640px;
+    margin: 10px auto 40px;
+}
+
+.placeholder-icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #fff1f2;
+    color: #e11d48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.15);
+}
+
+.eb-search-initial-placeholder h3 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 8px;
+}
+
+.eb-search-initial-placeholder p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESULTS CATEGORY SWITCHER (DONORS, BLOOD BANKS, CAMPS)
+   ========================================================================== */
+.eb-results-tabs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.eb-results-tabs-strip {
+    display: flex;
+    background: #e2e8f0;
+    padding: 4px;
+    border-radius: 12px;
+    gap: 4px;
+}
+
+.result-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    border-radius: 9px;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.result-tab-btn.active {
+    background: #ffffff;
+    color: #e11d48;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.eb-results-meta-counter {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #64748b;
+}
+
+/* ==========================================================================
+   FALLBACK BOX: NO DONORS FOUND -> REDIRECT TO BLOOD BANKS
+   ========================================================================== */
+.eb-donor-not-found-fallback-card {
+    background: #ffffff;
+    border: 1.5px solid #fecdd3;
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.06);
+}
+
+.fallback-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.fallback-badge-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fallback-card-header h3 {
+    font-size: 18px;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 6px;
+}
+
+.fallback-card-header p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.fallback-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-fallback-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-fallback-action.primary-red {
+    background: #e11d48;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+}
+
+.btn-fallback-action.primary-red:hover {
+    background: #be123c;
+    transform: translateY(-1px);
+}
+
+.btn-fallback-action.secondary-outline {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    color: #475569;
+}
+
+.btn-fallback-action.secondary-outline:hover {
+    border-color: #94a3b8;
+    background: #f8fafc;
+}
+
+/* ==========================================================================
+   BLOOD BANKS & CAMPS CARDS DECKS
+   ========================================================================== */
+.eb-banks-cards-deck,
+.eb-camps-cards-deck {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.eb-bank-search-card,
+.eb-camp-search-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.eb-bank-search-card:hover,
+.eb-camp-search-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+    border-color: #cbd5e1;
+}
+
+.bank-search-card-top h4,
+.eb-camp-search-card h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px;
+    line-height: 1.35;
+}
+
+.bank-card-address,
+.camp-spec-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.units-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 11.5px;
+    font-weight: 800;
+    margin-top: 6px;
+}
+
+.units-badge.low {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.bank-search-card-actions,
+.btn-call-camp-solid {
+    margin-top: 16px;
+    /* padding-top: 12px; */
+    border-top: 1px solid #f1f5f9;
+}
+
+.btn-call-bank-solid,
+.btn-call-camp-solid {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 12.5px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+    box-sizing: border-box;
+}
+
+.btn-call-bank-solid:hover,
+.btn-call-camp-solid:hover {
+    background: #e11d48;
+}
+
+.btn-call-bank-solid.disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.camp-header-badge-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.camp-state-pill {
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #475569;
+    text-transform: uppercase;
+}
+
+.camp-active-dot {
+    color: #16a34a;
+    font-size: 11.5px;
+    font-weight: 800;
+}
+
+.camp-specs-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+/* Disabled Alert & Call Actions */
+.eb-btn-alert-whatsapp.disabled,
+.eb-btn-alert-sms.disabled,
+.eb-modal-btn-whatsapp.disabled,
+.eb-modal-btn-sms.disabled {
+    background: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #94a3b8 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.eb-btn-call-donor.disabled {
+    background: #94a3b8 !important;
+    color: #ffffff !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+    text-decoration: none;
+}
