@@ -1,5 +1,12 @@
-const API_BASE = "/api";
-export const BACKEND_URL = "http://localhost:5001";
+const RAW_API_URL = (import.meta.env.VITE_API_URL || "/api").trim().replace(/\/$/, "");
+
+export const BACKEND_URL = RAW_API_URL.startsWith("http")
+    ? RAW_API_URL.replace(/\/api$/, "")
+    : "";
+
+const API_BASE = RAW_API_URL.startsWith("http")
+    ? (RAW_API_URL.endsWith("/api") ? RAW_API_URL : `${RAW_API_URL}/api`)
+    : "/api";
 
 // Resolve image paths
 export const resolveImageUrl = (imgSrc) => {

@@ -1,4 +1,8 @@
-const API_BASE = "http://localhost:5001/api";
+const RAW_API_URL = (import.meta.env.VITE_API_URL || "/api").trim().replace(/\/$/, "");
+
+export const ADMIN_API_BASE = RAW_API_URL.startsWith("http")
+    ? (RAW_API_URL.endsWith("/api") ? RAW_API_URL : `${RAW_API_URL}/api`)
+    : "/api";
 
 const safeFetch = async (url, options = {}) => {
     try {
@@ -19,18 +23,24 @@ const safeFetch = async (url, options = {}) => {
 
 // 1. Admin Authentication & Team
 export const adminLoginApi = async (email, password) => {
-    return safeFetch(`${API_BASE}/admin-auth/login`, {
+    return safeFetch(`${ADMIN_API_BASE}/admin-auth/login`, {
         method: "POST",
         body: JSON.stringify({ email, password })
     });
 };
 
+export const adminLogoutApi = async () => {
+    return safeFetch(`${ADMIN_API_BASE}/admin-auth/logout`, {
+        method: "POST"
+    });
+};
+
 export const fetchAdminTeam = async () => {
-    return safeFetch(`${API_BASE}/admin-auth/team`);
+    return safeFetch(`${ADMIN_API_BASE}/admin-auth/team`);
 };
 
 export const updateAdminProfileApi = async (payload) => {
-    return safeFetch(`${API_BASE}/admin-auth/profile/update`, {
+    return safeFetch(`${ADMIN_API_BASE}/admin-auth/profile/update`, {
         method: "PUT",
         body: JSON.stringify(payload)
     });
@@ -38,58 +48,58 @@ export const updateAdminProfileApi = async (payload) => {
 
 // 2. Admin Tasks
 export const fetchAdminTasksApi = async () => {
-    return safeFetch(`${API_BASE}/admin-auth/tasks`);
+    return safeFetch(`${ADMIN_API_BASE}/admin-auth/tasks`);
 };
 
 export const createAdminTaskApi = async (payload) => {
-    return safeFetch(`${API_BASE}/admin-auth/tasks/create`, {
+    return safeFetch(`${ADMIN_API_BASE}/admin-auth/tasks/create`, {
         method: "POST",
         body: JSON.stringify(payload)
     });
 };
 
 export const toggleAdminTaskStatusApi = async (id, status) => {
-    return safeFetch(`${API_BASE}/admin-auth/tasks/status/${id}`, {
+    return safeFetch(`${ADMIN_API_BASE}/admin-auth/tasks/status/${id}`, {
         method: "PATCH",
         body: JSON.stringify({ status })
     });
 };
 
 export const deleteAdminTaskApi = async (id) => {
-    return safeFetch(`${API_BASE}/admin-auth/tasks/delete/${id}`, {
+    return safeFetch(`${ADMIN_API_BASE}/admin-auth/tasks/delete/${id}`, {
         method: "DELETE"
     });
 };
 
 // 3. Donors Fetch & Delete
 export const fetchAllDonors = async () => {
-    return safeFetch(`${API_BASE}/donors/search`);
+    return safeFetch(`${ADMIN_API_BASE}/donors/search`);
 };
 
 export const deleteDonorAccount = async (identifier) => {
-    return safeFetch(`${API_BASE}/auth/user/delete/${encodeURIComponent(identifier)}`, {
+    return safeFetch(`${ADMIN_API_BASE}/auth/user/delete/${encodeURIComponent(identifier)}`, {
         method: "DELETE",
     });
 };
 
 // 4. Blood Banks Fetch & Delete
 export const fetchAdminBloodBanks = async () => {
-    return safeFetch(`${API_BASE}/bloodbanks/all`);
+    return safeFetch(`${ADMIN_API_BASE}/bloodbanks/all`);
 };
 
 export const deleteAdminBloodBank = async (id) => {
-    return safeFetch(`${API_BASE}/bloodbanks/delete/${id}`, {
+    return safeFetch(`${ADMIN_API_BASE}/bloodbanks/delete/${id}`, {
         method: "DELETE",
     });
 };
 
 // 5. Blood Camps Fetch & Delete
 export const fetchAdminCamps = async () => {
-    return safeFetch(`${API_BASE}/camps/all`);
+    return safeFetch(`${ADMIN_API_BASE}/camps/all`);
 };
 
 export const deleteAdminCamp = async (id) => {
-    return safeFetch(`${API_BASE}/camps/delete/${id}`, {
+    return safeFetch(`${ADMIN_API_BASE}/camps/delete/${id}`, {
         method: "DELETE",
     });
 };

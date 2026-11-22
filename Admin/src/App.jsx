@@ -7,7 +7,7 @@ import DonorManagement from "./pages/DonorManagement";
 import BloodBankManagement from "./pages/BloodBankManagement";
 import CampManagement from "./pages/CampManagement";
 import AdminProfile from "./pages/AdminProfile";
-import { fetchAllDonors, fetchAdminBloodBanks, fetchAdminCamps } from "./services/adminApi";
+import { fetchAllDonors, fetchAdminBloodBanks, fetchAdminCamps, adminLogoutApi } from "./services/adminApi";
 import "./styles/AdminDashboard.css";
 
 export default function App() {
@@ -74,7 +74,7 @@ export default function App() {
     // Complete Session Destruction on Logout (Point 1)
     const handleLogout = async () => {
         try {
-            await fetch("http://localhost:5001/api/admin-auth/logout", { method: "POST" });
+            await adminLogoutApi();
         } catch (err) {
             console.warn("Backend logout endpoint unreachable.");
         } finally {
