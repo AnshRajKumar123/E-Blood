@@ -23,6 +23,13 @@ const PORT = process.env.PORT || 5001;
 
 app.set("trust proxy", 1);
 
+const allowedOrigins = [
+    "https://e-blood-xi.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:5174",
+    (process.env.CLIENT_URL || "").trim().replace(/\/$/, "")
+].filter(Boolean);
+
 const syncPhoneIndex = async () => {
     try {
         const usersCollection = mongoose.connection.collection("users");
@@ -50,7 +57,20 @@ connectDB()
         console.error("MongoDB Startup Error:", err.message);
     });
 
-app.use(cors());
+app.use(
+    cors({
+        origin: (origin, callback) => {
+            if (!origin || allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
+            return callback(null, true);
+        },
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization", "Accept"]
+    })
+);
+app.options("*", cors());
+
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 

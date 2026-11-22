@@ -12,6 +12,9 @@ const router = express.Router();
 const getTransporter = () => {
     return nodemailer.createTransport({
         service: "gmail",
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 15000,
         auth: {
             user: (process.env.EMAIL_USER || "").trim(),
             pass: (process.env.EMAIL_PASS || "").replace(/\s+/g, "").trim()
@@ -68,6 +71,7 @@ router.post("/otp/send", async (req, res) => {
             message: "Email credentials not found in .env"
         });
     } catch (err) {
+        console.error("OTP Send Error:", err);
         return res.status(500).json({ success: false, message: err.message || "Failed to send email verification" });
     }
 });
@@ -206,7 +210,6 @@ router.post("/user/register-donor", async (req, res) => {
 });
 
 // 4. Update Questionnaire & Availability Endpoint (Supports BOTH POST and PUT)
-
 const handleQuestionnaireUpdate = async (req, res) => {
     try {
         const {
@@ -228,7 +231,6 @@ const handleQuestionnaireUpdate = async (req, res) => {
         const cleanEmail = email.trim().toLowerCase();
         const updateData = { preferencesUpdatedAt: new Date() };
 
-        // Validate Question 1
         if (donationAvailability) {
             if (!["open", "urgent_only", "temporarily_unavailable", "paused"].includes(donationAvailability)) {
                 return res.status(400).json({ success: false, message: "Invalid donation availability option." });
@@ -240,7 +242,6 @@ const handleQuestionnaireUpdate = async (req, res) => {
             updateData.resumeAvailabilityDate = resumeAvailabilityDate;
         }
 
-        // Validate Question 2 (Do not allow future dates for past donations)
         if (lastDonationHistoryType) {
             updateData.lastDonationHistoryType = lastDonationHistoryType;
             if (lastDonationHistoryType === "donated_before") {
@@ -258,12 +259,10 @@ const handleQuestionnaireUpdate = async (req, res) => {
             }
         }
 
-        // Validate Question 3
         if (travelDistancePreference) {
             updateData.travelDistancePreference = travelDistancePreference;
         }
 
-        // Validate Question 4
         if (showInDonorList !== undefined) {
             updateData.showInDonorList = Boolean(showInDonorList);
         }
